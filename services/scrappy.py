@@ -51,8 +51,8 @@ for place_element in place_elements:
 
 for value in places:
     fecha = value.select('div')[0].get_text().strip()
-    max = value.select('div > strong')[0].get_text().strip()
-    min = value.select('div > strong')[1].get_text().strip()
+    max = value.select('div > strong')[0].get_text().strip() #1
+    min = value.select('div > strong')[1].get_text().strip() #2
     descripcion = value.select('div')[4].get_text().strip()
     list_2.append(
         {
@@ -81,5 +81,5 @@ for i in range(n):
 
 for dato in new_lista:
     lugar_name = dato['lugar']
-    if lugar_name[-11:] == 'LA LIBERTAD':
+    if (lugar_name.split('-')[1]).strip() == 'LA LIBERTAD':
         libertad_place.append(dato)
